@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.signupLeft{
+  background-color: darkslategray;
+
+}
+
+.signupRight{
+  background-color: rgb(180, 180, 177);
+}
+
+.form-control{
+ border: solid red;
+}
