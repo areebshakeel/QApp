@@ -38,14 +38,41 @@
 }
 
 .signupLeft{
-  background-color: darkslategray;
+  background-color: rgb(32, 46, 46);
+  height: 100vh;
+  border-radius: 5px;
 
 }
 
 .signupRight{
   background-color: rgb(180, 180, 177);
+  border-radius: 5px;
+  height: 100vh;
 }
 
-.form-control{
- border: solid red;
+::placeholder{
+  text-align: center;
+}
+
+.heading{
+  color: white;
+
+}
+.text{
+  color: white;
+  width: 50%;
+}
+.mainImage{
+  height:inherit;
+  width: inherit;
+}
+.logo{
+  height: 15rem;
+}
+
+.inputDiv{
+  margin-top: 10rem;
+}
+.smallHeading{
+  color: rgb(32, 46, 46);
 }
