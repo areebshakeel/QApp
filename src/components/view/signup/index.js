@@ -81,7 +81,7 @@ function Signup(){
                                     <input type="checkbox"/>
                                 </div>
                                 <div className="col-8" >
-                                    <Button onClick={sendData} >Signup</Button>
+                                    <Button onClick={sendData} text='Sign Up' ></Button>
                                 </div>
                             </div>
                         </div>

@@ -4,6 +4,7 @@ import './App.css';
 import Signup from './components/view/signup/'
 import DashboardCompany from './views/dashboard'
 import AddEmployee from './views/addemployee'
+import AddStudent from './views/addstudent'
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
     <DashboardCompany/>
     <br/><br/><br/>
     <AddEmployee/>
+    <br/><br/><br/>
+    <AddStudent/>
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import {Row , Col } from 'antd';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Emp from '../../assets/signup.png'
+import Student from '../../assets/student.png'
 import Footer from '../../components/footer'
 import Button from '../../components/button'
 
 
-function AddEmployee(){
+function AddStudent(){
 
     return(
 
@@ -18,7 +18,7 @@ function AddEmployee(){
          <Row style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: 'rgb(32, 46, 46)', height:'7rem'}}>
             <Col>
 
-                 <h1 style={{color: 'white'}}>ADD EMPLOYEE DATA </h1>
+                 <h1 style={{color: 'white'}}>ADD STUDENT DATA </h1>
             
             </Col>
             <Col>
@@ -38,23 +38,23 @@ function AddEmployee(){
             
             </Col>
             <Col>
-               <label>Position:</label>
+               <label>Class:</label>
                <input type='text' className='form-control' placeholder='Enter Position'/>
              
             </Col>
             <Col>
-               <label>Salary:</label>
+               <label>Number:</label>
                <input type='number' className='form-control' placeholder='Enter Salary'/>
              
             </Col>
             <Col>
-               <label>Joining-Date:</label>
-               <input type='date' className='form-control'/>
+               <label>Age:</label>
+               <input type='number' className='form-control' placeholder='Enter Age'/>
              
             </Col>
             <Col>
                <br/>
-               {/* <button className='btn btn-success'>ADD</button> */}
+               {/* <button className='btn btn-primary'>ADD</button> */}
                <Button text='ADD'/>
              
             </Col>
@@ -62,7 +62,7 @@ function AddEmployee(){
 
             <Col>
 
-              <img src={Emp} height='400px'/>
+              <img src={Student} height='400px'/>
             
             
             </Col>
@@ -83,4 +83,4 @@ function AddEmployee(){
 
 }
 
-export default AddEmployee;
+export default AddStudent;
