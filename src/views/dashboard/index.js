@@ -22,7 +22,7 @@ function DashboardCompany(){
             
             </Col>
             <Col>
-                <h2 style={{color: 'white'}}>LogOut</h2>
+              <a href=''>  <h2 style={{color: 'white'}}>LogOut</h2> </a>
             
             </Col>
         </Row>
