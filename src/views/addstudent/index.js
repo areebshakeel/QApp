@@ -4,9 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Student from '../../assets/student.png'
 import Footer from '../../components/footer'
 import Button from '../../components/button'
+import { useHistory } from "react-router-dom";
 
 
 function AddStudent(){
+
+   const history= useHistory();
 
     return(
 
@@ -22,7 +25,7 @@ function AddStudent(){
             
             </Col>
             <Col>
-                <h2 style={{color: 'white'}}>Back</h2>
+               <a href=''> <h2 style={{color: 'white'}}  onClick={()=> history.push('/dashboard')}>Back</h2> </a>
             
             </Col>
         </Row>

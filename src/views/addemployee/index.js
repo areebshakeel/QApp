@@ -4,9 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Emp from '../../assets/signup.png'
 import Footer from '../../components/footer'
 import Button from '../../components/button'
+import { useHistory } from "react-router-dom";
 
 
 function AddEmployee(){
+   const history = useHistory()
 
     return(
 
@@ -22,7 +24,7 @@ function AddEmployee(){
             
             </Col>
             <Col>
-                <h2 style={{color: 'white'}}>Back</h2>
+              <a href=''>  <h2 style={{color: 'white'}} onClick={()=> history.push('/dashboard')}>Back</h2> </a>
             
             </Col>
         </Row>

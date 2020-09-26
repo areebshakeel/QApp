@@ -2,6 +2,7 @@ import React from 'react';
 import {Row , Col } from 'antd';
 import Footer from '../../components/footer'
 import Button from '../../components/button'
+import { useHistory } from "react-router-dom";
 
 
 
@@ -11,6 +12,7 @@ import Button from '../../components/button'
 
 function DashboardCompany(){
 
+    const history = useHistory()
    
 
 
@@ -82,7 +84,7 @@ function DashboardCompany(){
                 }}
                 
                 >Add Employee</button> */}
-                <Button text='Add Employee'/>
+                <Button onClick={()=> history.push('/addemployee')} text='Add Employee'/>
             
             </Col>
             {/* first table ends */}
@@ -136,7 +138,7 @@ style={{
 }}
 
 >Add Student</button> */}
-<Button text='Add Student'/>
+<Button onClick={()=> history.push('/addstudent')} text='Add Student'/>
 
           </Col>
           {/* second table ends */}

@@ -5,6 +5,7 @@ import CSS from '../../../App.css'
 import Button from '../../../components/button/index'
 import SignupImage from '../../../assets/signup.png'
 import Logo from '../../../assets/logo.png'
+import { useHistory } from "react-router-dom";
 
 function Signup(){
 
@@ -13,6 +14,8 @@ function Signup(){
     const [email,setEmail]=useState()
     const [password,setPassword]=useState()
     const [confirmPassword,setConfirmPassword]=useState()
+
+    const history = useHistory()
 
     const allInputs={
 
@@ -81,7 +84,7 @@ function Signup(){
                                     <input type="checkbox"/>
                                 </div>
                                 <div className="col-8" >
-                                    <Button onClick={sendData} text='Sign Up' ></Button>
+                                    <Button onClick={sendData, ()=> history.push('/dashboard')} text='Sign Up' ></Button>
                                 </div>
                             </div>
                         </div>
