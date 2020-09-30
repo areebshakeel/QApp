@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Row , Col } from 'antd';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Emp from '../../assets/signup.png'
@@ -10,6 +10,22 @@ import { useHistory } from "react-router-dom";
 function AddEmployee(){
    const history = useHistory()
 
+   
+
+   const [companyData, setCompanydata] = useState([{}])
+   
+
+   const companyName = function(e){
+
+   const name = e.target.value
+   
+   setCompanydata(name)
+   
+   
+
+   }
+   console.log(companyData)
+
     return(
 
         <>
@@ -20,7 +36,7 @@ function AddEmployee(){
          <Row style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: 'rgb(32, 46, 46)', height:'7rem'}}>
             <Col>
 
-                 <h1 style={{color: 'white'}}>ADD EMPLOYEE DATA </h1>
+                 <h1 style={{color: 'white'}}>ADD COMPANY DETAILS </h1>
             
             </Col>
             <Col>
@@ -35,23 +51,23 @@ function AddEmployee(){
         <Row style={{display: 'flex', justifyContent: 'space-around', alignItems:'center'}}>
             <Col style={{height: 'auto', width:'20rem'}}>
             <Col>
-               <label>Name:</label>
-               <input type='text' className='form-control' placeholder='Enter Full Name'/>
+               <label>Company Name:</label>
+               <input onChange={companyName} type='text' className='form-control' placeholder='Enter Full Name'/>
             
             </Col>
             <Col>
-               <label>Position:</label>
-               <input type='text' className='form-control' placeholder='Enter Position'/>
+               <label>Type:</label>
+               <input type='text' className='form-control' placeholder='Enter Comapny Works'/>
              
             </Col>
             <Col>
-               <label>Salary:</label>
-               <input type='number' className='form-control' placeholder='Enter Salary'/>
+               <label>Phone no:</label>
+               <input type='number' className='form-control' placeholder='Enter Number'/>
              
             </Col>
             <Col>
-               <label>Joining-Date:</label>
-               <input type='date' className='form-control'/>
+               <label>Open-Timings:</label>
+               <input type='time' className='form-control'/>
              
             </Col>
             <Col>

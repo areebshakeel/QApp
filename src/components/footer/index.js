@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row , Col } from 'antd';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Footer(){
@@ -32,7 +32,7 @@ function Footer(){
         </>
 
 
-    )
-}
+    );
+};
 
 export default Footer;

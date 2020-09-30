@@ -10,6 +10,7 @@ import SignUp from '../components/view/signup'
 import Dashboard from '../views/dashboard'
 import AddEmployee from '../views/addemployee'
 import AddStudent from '../views/addstudent'
+import StudentDashboard from '../views/studentdashboard'
 
 export default function MainRouter(){
     return (
@@ -32,6 +33,9 @@ export default function MainRouter(){
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch>
+            <Route path="/studentdashboard">
+                <StudentDashboard/>
+              </Route>
             <Route path="/addstudent">
                 <AddStudent/>
               </Route>

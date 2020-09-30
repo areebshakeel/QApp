@@ -33,122 +33,28 @@ function DashboardCompany(){
         {/* navbar ends */}
 
 
-        <Row style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', marginTop: '6rem'}}>
+   <Row style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', marginTop: '6rem'}}>
 
-            {/* first table starts */}
-            <Col>
-
-               <h1>Employees Data</h1>
-
-                <table style={{height: '20rem', width:'30rem'}} border='1'>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Salary</th>
-                        <th>Joining-Date</th>
-                        
-                    </tr>
-                    <tr>
-                        <td>Hammad</td>
-                        <td>Software Engineer</td>
-                        <td>100000</td>
-                        <td>25-02-2019</td>
-                    </tr>
-                    <tr>
-                        <td>Hammad</td>
-                        <td>Software Engineer</td>
-                        <td>100000</td>
-                        <td>25-02-2019</td>
-                    </tr>
-                    <tr>
-                        <td>Hammad</td>
-                        <td>Software Engineer</td>
-                        <td>100000</td>
-                        <td>25-02-2019</td>
-                    </tr>
-
-
-                </table>
-                <br/>
-
-                {/* <button 
-
-                style={{
-
-                    backgroundColor: 'rgb(32, 46, 46)',
-                    color: 'white',
-                    borderRadius: '10px',
-                    width:'8rem'
-
-
-                }}
+           <Col>
+                <Button onClick={()=> history.push('/addemployee')} text='Add Company'/>
                 
-                >Add Employee</button> */}
-                <Button onClick={()=> history.push('/addemployee')} text='Add Employee'/>
-            
-            </Col>
-            {/* first table ends */}
-            
+           </Col>
 
-            {/* second table starts */}
-            <Col>
-              <h1>Students Data</h1>           
- 
-               <table style={{height: '20rem', width:'30rem'}} border='1'>
-                  <tr>
-                      <th>Name</th>
-                      <th>Class</th>
-                       <th>Number</th>
-                      <th>Age</th>
+           <Col> 
+          
+               <Button onClick={()=> history.push('/addstudent')} text='View Companies'/>
+           </Col>
+
+   </Row>
+
         
-                 </tr>
-                 <tr>
-                     <td>Saad</td>
-                     <td>FC-MS 01</td>
-                     <td>03127865655</td>
-                     <td>22</td>
-                </tr>
-                <tr>
-                     <td>Saad</td>
-                     <td>FC-MS 01</td>
-                     <td>03127865655</td>
-                     <td>22</td>
-                </tr>
-                <tr>
-                     <td>Saad</td>
-                     <td>FC-MS 01</td>
-                     <td>03127865655</td>
-                     <td>22</td>
-                </tr>
-               
-
-
-              </table>
-              <br/>
-              {/* <button 
-
-style={{
-
-    backgroundColor: 'rgb(32, 46, 46)',
-    color: 'white',
-    borderRadius: '10px',
-    width:'8rem'
-
-
-}}
-
->Add Student</button> */}
-<Button onClick={()=> history.push('/addstudent')} text='Add Student'/>
-
-          </Col>
-          {/* second table ends */}
 
 
 
-        </Row>
+        
 
 
-        <br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/>
 
         
        <Footer/>

@@ -21,7 +21,7 @@ function AddStudent(){
          <Row style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: 'rgb(32, 46, 46)', height:'7rem'}}>
             <Col>
 
-                 <h1 style={{color: 'white'}}>ADD STUDENT DATA </h1>
+                 <h1 style={{color: 'white'}}>All Companies List </h1>
             
             </Col>
             <Col>
@@ -33,51 +33,106 @@ function AddStudent(){
         <br/>
         <br/>
 
-        <Row style={{display: 'flex', justifyContent: 'space-around', alignItems:'center'}}>
-            <Col style={{height: 'auto', width:'20rem'}}>
-            <Col>
-               <label>Name:</label>
-               <input type='text' className='form-control' placeholder='Enter Full Name'/>
+        <Row style={{display: 'flex', alignItems:'center'}}>
+
+           <Col>
+
+           <label>Type:</label>
+           
+           </Col>
+           <Col>
+ 
             
-            </Col>
-            <Col>
-               <label>Class:</label>
-               <input type='text' className='form-control' placeholder='Enter Position'/>
-             
-            </Col>
-            <Col>
-               <label>Number:</label>
-               <input type='number' className='form-control' placeholder='Enter Salary'/>
-             
-            </Col>
-            <Col>
-               <label>Age:</label>
-               <input type='number' className='form-control' placeholder='Enter Age'/>
-             
-            </Col>
-            <Col>
-               <br/>
-               {/* <button className='btn btn-primary'>ADD</button> */}
-               <Button text='ADD'/>
-             
-            </Col>
+             <select className='form-control'>
+                <option>   Software    </option>
+                <option>   Construction   </option>
+                <option>   IT    </option>
+                <option>   Pharma    </option>
+                <option>   petroleum    </option>
+             </select>
+           
+           </Col>
+           <Col>
+
+                    <Button  text='filter'/>
+
             </Col>
 
-            <Col>
-
-              <img src={Student} height='400px'/>
-            
-            
+            <Col style={{marginLeft: '8rem', display: 'flex', alignItems: 'center'}}>
+                 <input className='form-control' type='text'/>
+                 <span style={{marginLeft: '2rem'}}>
+                 <Button text='Search'/>
+                 </span>
             </Col>
-
-
         </Row>
 
-        <br/><br/><br/> <br/> <br/>
+        <Row style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '3rem'}}>
+
+           <Col>
+
+              <table  style={{height: '20rem', width: '60rem'}} >
+
+                 <tr style={{border: '1px solid black'}}>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Number</th>
+                    <th>Timings</th>
+                    <th>Actions</th>
+                 </tr>
+                 <tr style={{border: '1px solid black'}}>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    
+                 </tr>
+
+                 <tr style={{border: '1px solid black'}}>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                 </tr>
+
+                 <tr style={{border: '1px solid black'}}>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                 </tr>
+
+
+
+
+
+                 <tr style={{border: '1px solid black'}}>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                    <td>FactualCode</td>
+                 </tr>
+
+
+
+
+
+
+              </table>
+           
+           
+           </Col>
+        </Row> 
+
+        <br/><br/><br/>
+
+      
+        </Col>
 
         <Footer/>
-        </Col>
-        
         </>
 
 
