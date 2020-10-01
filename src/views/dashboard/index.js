@@ -22,7 +22,7 @@ function DashboardCompany(){
                 // An error happened.
               });
         }
-
+        let userName = localStorage.getItem('name')
 
     return(
         <>
@@ -30,7 +30,7 @@ function DashboardCompany(){
         <Row style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: 'rgb(32, 46, 46)', height:'7rem'}}>
             <Col>
 
-                 <h1 style={{color: 'white'}}>Dashboard Of Company </h1>
+                 <h1 style={{color: 'white'}}>Dashboard Of <span style={{color: 'blue', fontFamily: 'sans-serif'}}>{userName} </span> </h1>
             
             </Col>
             <Col>

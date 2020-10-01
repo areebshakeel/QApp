@@ -26,6 +26,10 @@ function Signup(){
         password,
         confirmPassword
     }
+
+    localStorage.setItem('name', firstName)
+
+    
     
     // const sendData=function(){
 
