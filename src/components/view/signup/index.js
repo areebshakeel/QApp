@@ -56,7 +56,9 @@ function Signup(){
    
 
     return(
-        <div style={{display:"flex", justifyContent:'space-between', overflowX:"hidden", overflowY:"hidden"}} className="row">
+        <div className="container-fluid">
+
+        <div className="row main-div">
 
             
 
@@ -96,12 +98,24 @@ function Signup(){
                             <input onChange={(e)=> setConfirmPassword(e.target.value) } type="password" placeholder="Confirm Password" className="form-control" style={{marginTop:"2rem"}}/>
 
                             <div className="row" style={{display:"inline-list-item"}}>
-                                <div className="col-12">
+                                <div className="col-9 checkboxDiv">
                                     <input type="checkbox"/>
+                                    <p>I agree with term and conditions</p>
                                 </div>
-                                <div className="col-8" >
+                                <div  className="col-8 signupButton" >
                                     <Button onClick={onRegister} text='Sign Up' ></Button>
                                 </div>
+                            </div>
+
+                            <div className="col-8 loginLink">
+                                <p>
+                                    already have an account?
+                                </p>
+
+                             <div>
+
+                        </div>
+
                             </div>
                         </div>
                     </div>
@@ -109,6 +123,7 @@ function Signup(){
 
            
         </div>
+        </div>    
     )
 }
 
