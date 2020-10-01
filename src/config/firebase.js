@@ -33,6 +33,7 @@ export {
     registerUser,
     loginUser,
     getPosts
+    
 }
 
 

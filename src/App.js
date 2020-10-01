@@ -10,13 +10,7 @@ import Router from './config/router'
 function App() {
   return (
     <div >
-    {/* <Signup></Signup>
-    <br/><br/><br/>
-    <DashboardCompany/>
-    <br/><br/><br/>
-    <AddEmployee/>
-    <br/><br/><br/>
-    <AddStudent/> */}
+
     <Router/>
     </div>
   );
