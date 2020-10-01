@@ -108,7 +108,7 @@ function Signup(){
                             </div>
 
                             <div className="col-8 loginLink">
-                                <p>
+                                <p onClick={()=>history.replace('/login')}>
                                     already have an account?
                                 </p>
 
