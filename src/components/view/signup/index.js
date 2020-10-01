@@ -6,14 +6,15 @@ import Button from '../../../components/button/index'
 import SignupImage from '../../../assets/signup.png'
 import Logo from '../../../assets/logo.png'
 import { useHistory } from "react-router-dom";
+import {registerUser,loginUser,getPosts} from '../../../config/firebase'
 
 function Signup(){
 
-    const [firstName,setFirstName]=useState()
-    const [lastName,setLastName]=useState()
-    const [email,setEmail]=useState()
-    const [password,setPassword]=useState()
-    const [confirmPassword,setConfirmPassword]=useState()
+    const [firstName,setFirstName]=useState('')
+    const [lastName,setLastName]=useState('')
+    const [email,setEmail]=useState('')
+    const [password,setPassword]=useState('')
+    const [confirmPassword,setConfirmPassword]=useState('')
 
     const history = useHistory()
 
@@ -36,6 +37,20 @@ function Signup(){
         // setConfirmPassword('')
 
     }
+
+
+    const onRegister = async function(){
+        try{
+            await registerUser(email, password)
+            setMessage('User is registered Successfully!')
+
+        }catch(error){
+            setMessage(error.message)
+        }
+    }
+
+
+    
 
    
 
@@ -84,7 +99,7 @@ function Signup(){
                                     <input type="checkbox"/>
                                 </div>
                                 <div className="col-8" >
-                                    <Button onClick={sendData, ()=> history.push('/dashboard')} text='Sign Up' ></Button>
+                                    <Button onClick={onRegister, ()=> history.push('/dashboard')} text='Sign Up' ></Button>
                                 </div>
                             </div>
                         </div>

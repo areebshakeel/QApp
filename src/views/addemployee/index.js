@@ -12,18 +12,32 @@ function AddEmployee(){
 
    
 
-   const [companyData, setCompanydata] = useState([{}])
+   const [companyData, setCompanyData] = useState([{}])
+   
    
 
    const companyName = function(e){
 
    const name = e.target.value
    
-   setCompanydata(name)
+   setCompanyData(name)
+   
+
    
    
 
    }
+
+   const companyWorks = function(e){
+
+      const work = e.target.value
+      setCompanyData(work)
+     
+     localStorage.setItem('data', companyData)
+   }
+
+
+
    console.log(companyData)
 
     return(
@@ -57,7 +71,7 @@ function AddEmployee(){
             </Col>
             <Col>
                <label>Type:</label>
-               <input type='text' className='form-control' placeholder='Enter Comapny Works'/>
+               <input onChange={companyWorks} type='text' className='form-control' placeholder='Enter Comapny Works'/>
              
             </Col>
             <Col>
