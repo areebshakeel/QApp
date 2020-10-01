@@ -1,4 +1,5 @@
 import React from 'react';
+import * as firebase from 'firebase'
 import {Row , Col } from 'antd';
 import Footer from '../../components/footer'
 import Button from '../../components/button'
@@ -13,7 +14,14 @@ import { useHistory } from "react-router-dom";
 function DashboardCompany(){
 
     const history = useHistory()
-   
+
+        const signOutUser = function(){
+            firebase.auth().signOut().then(function() {
+                history.push('/')
+              }).catch(function(error) {
+                // An error happened.
+              });
+        }
 
 
     return(
@@ -26,7 +34,7 @@ function DashboardCompany(){
             
             </Col>
             <Col>
-              <a href=''>  <h2 style={{color: 'white'}}>LogOut</h2> </a>
+              <a href=''>  <h2 onClick={signOutUser} style={{color: 'white'}}>LogOut</h2> </a>
             
             </Col>
         </Row>

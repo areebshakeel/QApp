@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import SignUp from '../components/view/signup'
+import LogIn from '../components/view/login'
 import Dashboard from '../views/dashboard'
 import AddEmployee from '../views/addemployee'
 import AddStudent from '../views/addstudent'
@@ -44,6 +45,9 @@ export default function MainRouter(){
               </Route>
               <Route path="/dashboard">
                 <Dashboard/>
+              </Route>
+              <Route path="/login">
+                <LogIn/>
               </Route>
               <Route path="/">
                 <SignUp/>

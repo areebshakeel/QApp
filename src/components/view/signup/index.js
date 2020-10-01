@@ -6,7 +6,7 @@ import Button from '../../../components/button/index'
 import SignupImage from '../../../assets/signup.png'
 import Logo from '../../../assets/logo.png'
 import { useHistory } from "react-router-dom";
-import {registerUser,loginUser,getPosts} from '../../../config/firebase'
+import {registerUser} from '../../../config/firebase';
 
 function Signup(){
 
@@ -16,7 +16,7 @@ function Signup(){
     const [password,setPassword]=useState('')
     const [confirmPassword,setConfirmPassword]=useState('')
 
-    const history = useHistory()
+    const history = useHistory();
 
     const allInputs={
 
@@ -27,25 +27,26 @@ function Signup(){
         confirmPassword
     }
     
-    const sendData=function(){
+    // const sendData=function(){
 
-        console.log(allInputs)
-        // setFirstName('')
-        // setLastName('')
-        // setEmail('')
-        // setPassword('')
-        // setConfirmPassword('')
+    //     console.log(allInputs)
+    //     // setFirstName('')
+    //     // setLastName('')
+    //     // setEmail('')
+    //     // setPassword('')
+    //     // setConfirmPassword('')
 
-    }
+    // }
 
 
     const onRegister = async function(){
         try{
             await registerUser(email, password)
-            setMessage('User is registered Successfully!')
+            alert('User is registered Successfully!')
+            history.push('/login')
 
         }catch(error){
-            setMessage(error.message)
+            alert(error.message)
         }
     }
 
@@ -99,7 +100,7 @@ function Signup(){
                                     <input type="checkbox"/>
                                 </div>
                                 <div className="col-8" >
-                                    <Button onClick={onRegister, ()=> history.push('/dashboard')} text='Sign Up' ></Button>
+                                    <Button onClick={onRegister} text='Sign Up' ></Button>
                                 </div>
                             </div>
                         </div>
