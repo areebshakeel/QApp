@@ -3,15 +3,15 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAuZkhnLPSnF2ySGpIBmZB4RbP7LqXFNu8",
-    authDomain: "q-app-63ccd.firebaseapp.com",
-    databaseURL: "https://q-app-63ccd.firebaseio.com",
-    projectId: "q-app-63ccd",
-    storageBucket: "q-app-63ccd.appspot.com",
-    messagingSenderId: "454000901065",
-    appId: "1:454000901065:web:ffb79f09a4840da3cf0618",
-    measurementId: "G-CHZ3MD2WFB"
-  };
+  apiKey: "AIzaSyBsvyq48k4imEBb7ky1lLuqDmCXIpuo4rg",
+  authDomain: "qapp-b2d75.firebaseapp.com",
+  databaseURL: "https://qapp-b2d75.firebaseio.com",
+  projectId: "qapp-b2d75",
+  storageBucket: "qapp-b2d75.appspot.com",
+  messagingSenderId: "622054863230",
+  appId: "1:622054863230:web:97338e0203a56d5c27032f",
+  measurementId: "G-8Y1E93B59F"
+};
 
 firebase.initializeApp(firebaseConfig);
 
