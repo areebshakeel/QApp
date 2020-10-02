@@ -39,7 +39,8 @@ function LogIn(){
 
     
     return(
-        <div style={{display:"flex", justifyContent:'space-between', overflowX:"hidden", overflowY:"hidden"}} className="row">
+       <div className="container-fluid"> 
+        <div className="row">
 
             
 
@@ -78,19 +79,31 @@ function LogIn(){
                    
 
                     <div className="row" style={{display:"inline-list-item"}}>
-                        <div className="col-12">
-                            <input type="checkbox"/>
-                        </div>
-                        <div className="col-8" >
+                                 <div className="col-9 checkboxDiv">
+                                    <input type="checkbox"/>
+                                    <p>I agree with term and conditions</p>
+                                </div>
+                        <div className="col-8 signupButton" >
                             <Button onClick={onLogin} text='Log In' ></Button>
                             <a href=''><span onClick={()=>history.push('/signup')}>Don't have an Account</span></a>
                         </div>
                     </div>
                 </div>
+                
+                <div className="col-8 loginLink">
+                                <p onClick={()=>history.replace('/signup')}>
+                                    don't have an account?
+                                </p>
+
+                             </div>
+
+                 <div className="col-12" style={{marginTop:"9.8rem",height:"20px"}}>
+                 </div>            
             </div>
         </div>
 
    
+</div>
 </div>
     )
 }
