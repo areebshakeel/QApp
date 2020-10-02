@@ -7,7 +7,7 @@ import Button from '../../components/button'
 import { useHistory } from "react-router-dom";
 import * as firebase from 'firebase';
 import 'firebase/firestore';
-import {createGroceryList} from '../../config/firebase'
+import {companiesList} from '../../config/firebase'
 
 
 
@@ -28,12 +28,10 @@ function AddEmployee() {
       companyTiming
    }
 
-   console.log(companyData)
-
    const sendData = async function () {
 
       try{
-         await createGroceryList(companyData)
+         await companiesList(companyData)
          alert('code chalaaa')
       }
       catch(error){
