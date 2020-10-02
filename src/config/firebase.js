@@ -30,11 +30,8 @@ function getPosts(){
 
 const store = firebase.firestore();
 
-      function createGroceryList(){
-         return store.collection('companyDetails')
-             .add(
-                
-             );
+      function createGroceryList(companyData){
+         return store.collection('companyDetails').add(companyData)
      };
 
 

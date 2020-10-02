@@ -32,8 +32,16 @@ function AddEmployee() {
 
    const sendData = async function () {
 
-      createGroceryList.collection('companyDetails').add(companyData).then(function(){alert('Code Nh Chalaa')})
+      try{
+         await createGroceryList(companyData)
+         alert('code chalaaa')
+      }
+      catch(error){
 
+         alert(error.message)
+
+      }
+      
 
    }
 
