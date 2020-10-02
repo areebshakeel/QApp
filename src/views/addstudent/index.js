@@ -9,6 +9,13 @@ import { useHistory } from "react-router-dom";
 
 function AddStudent(){
 
+   const allCompanies= [{name: 'factualCode',type:'software',
+    number: '03007044599',timing: '09:00 AM',actions: 'factual'},
+    {name: 'Koder Labs',type:'software',
+     number: '03007044599',timing: '09:00 AM',actions: 'factual'}
+
+]
+
    const history= useHistory();
 
     return(
@@ -79,42 +86,24 @@ function AddStudent(){
                     <th>Timings</th>
                     <th>Actions</th>
                  </tr>
-                 <tr style={{border: '1px solid black'}}>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    
-                 </tr>
+                 {allCompanies.map(function(item){
 
-                 <tr style={{border: '1px solid black'}}>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                 </tr>
-
-                 <tr style={{border: '1px solid black'}}>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                 </tr>
+                    return(
+                     <tr style={{border: '1px solid black'}}>
+                     <td>{item.name}</td>
+                    <td>{item.type}</td>
+                    <td>{item.number}</td>
+                    <td>{item.timing}</td>
+                    <td>{item.actions}</td>
+                     
+                  </tr>
+                    )
 
 
+                 })}
+                 
 
-
-
-                 <tr style={{border: '1px solid black'}}>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                    <td>FactualCode</td>
-                 </tr>
+               
 
 
 
