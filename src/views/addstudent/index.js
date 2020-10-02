@@ -98,6 +98,7 @@ function AddStudent() {
           >
             <input
               onChange={(e) => searchData(e)}
+              placeholder="Search Compoanies"
               className="form-control"
               type="text"
             />
