@@ -7,8 +7,6 @@ import Button from '../../components/button'
 import { useHistory } from "react-router-dom";
 import * as firebase from 'firebase';
 import 'firebase/firestore';
-import Firestore from 'firebase/firestore';
-
 
 
 
@@ -31,9 +29,18 @@ function AddEmployee() {
 
    console.log(companyData)
 
-   const sendData = function () {
+   const sendData = async function () {
 
-       firebase.firestore.collection('companyDetails').add(companyData)
+      const firestore = firebase.firestore();
+
+      const createGroceryList = (companyData) => {
+         return firestore.collection('companyDetails')
+             .add(
+                companyData
+             );
+     };
+     console.log(companyData)
+
 
    }
 
