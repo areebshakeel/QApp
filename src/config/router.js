@@ -46,11 +46,11 @@ export default function MainRouter(){
               <Route path="/dashboard">
                 <Dashboard/>
               </Route>
-              <Route path="/login">
-                <LogIn/>
+              <Route path="/signup">
+                <SignUp/>
               </Route>
               <Route path="/">
-                <SignUp/>
+              <LogIn/>
               </Route>
             </Switch>
           </div>

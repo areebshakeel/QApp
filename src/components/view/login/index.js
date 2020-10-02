@@ -83,6 +83,7 @@ function LogIn(){
                         </div>
                         <div className="col-8" >
                             <Button onClick={onLogin} text='Log In' ></Button>
+                            <a href=''><span onClick={()=>history.push('/signup')}>Don't have an Account</span></a>
                         </div>
                     </div>
                 </div>
