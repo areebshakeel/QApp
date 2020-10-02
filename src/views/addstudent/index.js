@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Student from "../../assets/student.png";
@@ -6,51 +6,40 @@ import Footer from "../../components/footer";
 import Button from "../../components/button";
 import { useHistory } from "react-router-dom";
 import * as firebase from "firebase";
-import 'firebase/firestore';
-import {getCompaniesList} from '../../config/firebase'
+import "firebase/firestore";
+import { getCompaniesList } from "../../config/firebase";
 
 function AddStudent() {
-const [response1,setResponse]=useState([])
-   useEffect(function(){
+  const [response1, setResponse] = useState([]);
+  const [searchVar, setSearchVar] = useState([]);
+  const [isSearch, setIsSearch] = useState(false);
+  useEffect(function () {
+    let response = getData();
+  }, []);
 
-    let response=   getData()
+  const getData = async function () {
+    try {
+      let response = await getCompaniesList();
+      await setResponse(response);
+      console.log("reposnce", response);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+  const searchData = function (e) {
+    console.log(e.target.value);
 
-
-
-   },[])
-
-   const getData= async function (){
-      
-      try{
-        let response= await getCompaniesList()   
-       await   setResponse(response)
-        console.log('reposnce',response)     
-      }
-      catch(error){
-         alert(error.message)
-
-      }
-      
-   }
-  const allCompanies = [
-    {
-      name: "factualCode",
-      type: "software",
-      number: "03007044599",
-      timing: "09:00 AM",
-      actions: "factual",
-    },
-    {
-      name: "Koder Labs",
-      type: "software",
-      number: "03007044599",
-      timing: "09:00 AM",
-      actions: "factual",
-    },
-  ];
+    let searchCompanies = response1.filter((search) => {
+      console.log(search);
+      setIsSearch(true)
+      return search.companyName.includes(e.target.value) == true;
+    });
+    setSearchVar(searchCompanies);
+    console.log(searchCompanies);
+  };
 
   const history = useHistory();
-  console.log(response1)
+  console.log(response1);
   return (
     <>
       <Col style={{ backgroundColor: "rgb(180, 180, 177)" }}>
@@ -107,7 +96,11 @@ const [response1,setResponse]=useState([])
               alignItems: "center",
             }}
           >
-            <input className="form-control" type="text" />
+            <input
+              onChange={(e) => searchData(e)}
+              className="form-control"
+              type="text"
+            />
             <span style={{ marginLeft: "2rem" }}>
               <Button text="Search" />
             </span>
@@ -125,24 +118,29 @@ const [response1,setResponse]=useState([])
             </tr>
           </thead>
           <tbody>
-        {response1.map((item,index)=>{
-           return <tr>
-              <td>{index+1}
-              </td>
-              <td>
-        {item.companyName}
-              </td>
-              <td>
-                 {item.companyType}
-              </td>
-              <td>
-                 {item.companyNumber}
-              </td>
-              <td>
-                 {item.companyTiming}
-              </td>
-           </tr>
-        })}
+            {isSearch
+              ? searchVar.map((item, index) => {
+                  return (
+                    <tr>
+                      <td>{index + 1}</td>
+                      <td>{item.companyName}</td>
+                      <td>{item.companyType}</td>
+                      <td>{item.companyNumber}</td>
+                      <td>{item.companyTiming}</td>
+                    </tr>
+                  );
+                })
+              : response1.map((item, index) => {
+                  return (
+                    <tr>
+                      <td>{index + 1}</td>
+                      <td>{item.companyName}</td>
+                      <td>{item.companyType}</td>
+                      <td>{item.companyNumber}</td>
+                      <td>{item.companyTiming}</td>
+                    </tr>
+                  );
+                })}
           </tbody>
         </table>
 
