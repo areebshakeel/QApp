@@ -13,6 +13,8 @@ function AddStudent() {
   const [response1, setResponse] = useState([]);
   const [searchVar, setSearchVar] = useState([]);
   const [isSearch, setIsSearch] = useState(false);
+  const [searchCatVar,setSearchCatVar]= useState([]);
+  const [isCategory, setIsCategory]= useState(false)
   useEffect(function () {
     let response = getData();
   }, []);
@@ -36,7 +38,19 @@ function AddStudent() {
     });
     setSearchVar(searchCompanies);
     console.log(searchCompanies);
-  };
+  }
+
+  const searchCategory=function(e){
+
+   console.log(e.target.value)
+
+   let searchCategories= response1.filter((search)=>{
+      setIsCategory(true)
+      return search.companyType.includes(e.target.value) == true;
+   })
+   setSearchCatVar(searchCategories)
+
+  }
 
   const history = useHistory();
   console.log(response1);
@@ -77,7 +91,7 @@ function AddStudent() {
             <label>Type:</label>
           </Col>
           <Col>
-            <select className="form-control">
+            <select onChange={(e)=>searchCategory(e)} className="form-control">
               <option> Software </option>
               <option> Construction </option>
               <option> IT </option>
@@ -119,6 +133,31 @@ function AddStudent() {
             </tr>
           </thead>
           <tbody>
+             {isCategory ? searchCatVar.map((item,index)=>{
+                return(
+                  <tr>
+                  <td>{index + 1}</td>
+                  <td>{item.companyName}</td>
+                  <td>{item.companyType}</td>
+                  <td>{item.companyNumber}</td>
+                  <td>{item.companyTiming}</td>
+                </tr>
+                )
+             })
+            :
+            response1.map((item, index) => {
+               return (
+                 <tr>
+                   <td>{index + 1}</td>
+                   <td>{item.companyName}</td>
+                   <td>{item.companyType}</td>
+                   <td>{item.companyNumber}</td>
+                   <td>{item.companyTiming}</td>
+                 </tr>
+               );
+             })
+            
+            }
             {isSearch
               ? searchVar.map((item, index) => {
                   return (
