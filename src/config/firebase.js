@@ -33,10 +33,11 @@ const store = firebase.firestore();
 function companiesList(companyData) {
   return store.collection("companyDetails").add(companyData);
 }
-const myData=[]
 
-function getCompaniesList() {
-  return store
+
+ async function getCompaniesList  () {
+  const myData=[]
+  await store
     .collection("companyDetails")
     .get()
     .then((snapshot) => {
@@ -44,8 +45,9 @@ function getCompaniesList() {
         myData.push(docs.data())
       });
     });
+return myData
+    // localStorage.setItem('ourdata',myData)
 }
-localStorage.setItem('ourdata',myData)
 
 
 export {

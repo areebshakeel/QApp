@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { Row, Col } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Student from "../../assets/student.png";
@@ -10,10 +10,11 @@ import 'firebase/firestore';
 import {getCompaniesList} from '../../config/firebase'
 
 function AddStudent() {
-
+const [response1,setResponse]=useState([])
    useEffect(function(){
 
-      getData()
+    let response=   getData()
+
 
 
    },[])
@@ -21,8 +22,9 @@ function AddStudent() {
    const getData= async function (){
       
       try{
-         await getCompaniesList()         
-         alert('chall giaa')
+        let response= await getCompaniesList()   
+       await   setResponse(response)
+        console.log('reposnce',response)     
       }
       catch(error){
          alert(error.message)
@@ -48,7 +50,7 @@ function AddStudent() {
   ];
 
   const history = useHistory();
-
+  console.log(response1)
   return (
     <>
       <Col style={{ backgroundColor: "rgb(180, 180, 177)" }}>
@@ -123,13 +125,24 @@ function AddStudent() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td></td>
-            </tr>
+        {response1.map((item,index)=>{
+           return <tr>
+              <td>{index+1}
+              </td>
+              <td>
+        {item.companyName}
+              </td>
+              <td>
+                 {item.companyType}
+              </td>
+              <td>
+                 {item.companyNumber}
+              </td>
+              <td>
+                 {item.companyTiming}
+              </td>
+           </tr>
+        })}
           </tbody>
         </table>
 
