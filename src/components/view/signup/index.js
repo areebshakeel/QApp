@@ -47,7 +47,7 @@ function Signup(){
         try{
             await registerUser(email, password)
             alert('User is registered Successfully!')
-            history.push('/')
+            history.replace('/')
 
         }catch(error){
             alert(error.message)
