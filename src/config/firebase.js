@@ -28,12 +28,22 @@ function getPosts(){
     return fetch('https://jsonplaceholder.typicode.com/posts')
 }
 
+const store = firebase.firestore();
+
+      function createGroceryList(){
+         return store.collection('companyDetails')
+             .add(
+                
+             );
+     };
 
 
 export {
     registerUser,
     loginUser,
-    getPosts
+    getPosts,
+    createGroceryList
+
     
 }
 
