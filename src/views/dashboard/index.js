@@ -57,7 +57,11 @@ function DashboardCompany(){
 
    </Row>
 
-        
+        <Row style={{display:'flex', justifyContent: 'center',marginTop:'3rem'}}>
+            <Col>
+            <Button text='Student portal'/>
+            </Col>
+        </Row>
 
 
 
