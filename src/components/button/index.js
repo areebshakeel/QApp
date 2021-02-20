@@ -9,7 +9,7 @@ function Button(props) {
         <div>
                 <button className="btn btn-primary btn-lg" {...props}
                 style={{paddingLeft:"40px", paddingRight:"40px", paddingTop:"10px",paddingBottom:"10px", background:"darkslategray"}}>
-                    Signup</button>
+                    {props.text}</button>
         </div>
     )
     

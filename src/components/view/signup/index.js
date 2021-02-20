@@ -5,14 +5,18 @@ import CSS from '../../../App.css'
 import Button from '../../../components/button/index'
 import SignupImage from '../../../assets/signup.png'
 import Logo from '../../../assets/logo.png'
+import { useHistory } from "react-router-dom";
+import {registerUser} from '../../../config/firebase';
 
 function Signup(){
 
-    const [firstName,setFirstName]=useState()
-    const [lastName,setLastName]=useState()
-    const [email,setEmail]=useState()
-    const [password,setPassword]=useState()
-    const [confirmPassword,setConfirmPassword]=useState()
+    const [firstName,setFirstName]=useState('')
+    const [lastName,setLastName]=useState('')
+    const [email,setEmail]=useState('')
+    const [password,setPassword]=useState('')
+    const [confirmPassword,setConfirmPassword]=useState('')
+
+    const history = useHistory();
 
     const allInputs={
 
@@ -22,22 +26,43 @@ function Signup(){
         password,
         confirmPassword
     }
+
+    localStorage.setItem('name', firstName)
+
     
-    const sendData=function(){
+    
+    // const sendData=function(){
 
-        console.log(allInputs)
-        // setFirstName('')
-        // setLastName('')
-        // setEmail('')
-        // setPassword('')
-        // setConfirmPassword('')
+    //     console.log(allInputs)
+    //     // setFirstName('')
+    //     // setLastName('')
+    //     // setEmail('')
+    //     // setPassword('')
+    //     // setConfirmPassword('')
 
+    // }
+
+
+    const onRegister = async function(){
+        try{
+            await registerUser(email, password)
+            alert('User is registered Successfully!')
+            history.replace('/')
+
+        }catch(error){
+            alert(error.message)
+        }
     }
+
+
+    
 
    
 
     return(
-        <div style={{display:"flex", justifyContent:'space-between', overflowX:"hidden", overflowY:"hidden"}} className="row">
+        <div className="container-fluid">
+
+        <div className="row main-div">
 
             
 
@@ -77,12 +102,24 @@ function Signup(){
                             <input onChange={(e)=> setConfirmPassword(e.target.value) } type="password" placeholder="Confirm Password" className="form-control" style={{marginTop:"2rem"}}/>
 
                             <div className="row" style={{display:"inline-list-item"}}>
-                                <div className="col-12">
+                                <div className="col-9 checkboxDiv">
                                     <input type="checkbox"/>
+                                    <p>I agree with term and conditions</p>
                                 </div>
-                                <div className="col-8" >
-                                    <Button onClick={sendData} >Signup</Button>
+                                <div  className="col-8 signupButton" >
+                                    <Button onClick={onRegister} text='Sign Up' ></Button>
                                 </div>
+                            </div>
+
+                            <div className="col-8 loginLink">
+                                <p onClick={()=>history.replace('/login')}>
+                                    already have an account?
+                                </p>
+
+                             <div>
+
+                        </div>
+
                             </div>
                         </div>
                     </div>
@@ -90,6 +127,7 @@ function Signup(){
 
            
         </div>
+        </div>    
     )
 }
 
